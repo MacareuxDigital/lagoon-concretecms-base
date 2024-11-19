@@ -6,7 +6,7 @@ A template to make Concrete CMS run on Lagoon.
 * [Concrete CMS](https://www.concretecms.org/)
 
 This template includes everything you need to get started with Concrete CMS to run on Lagoon.
-It is based on the [community docker image](https://github.com/concrete5-community/docker5) but modified to work with Lagoon.
+It was referenced [official composer base](https://github.com/concretecms/composer) and [community docker image](https://github.com/concrete5-community/docker5) but modified to work with Lagoon.
 
 ## Included Services
 
