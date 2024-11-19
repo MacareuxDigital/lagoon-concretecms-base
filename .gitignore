@@ -12,4 +12,3 @@ __MACOSX
 
 # Ignore developer stuff
 /.idea
-/.env
