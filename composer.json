@@ -1,0 +1,41 @@
+{
+    "name": "macareuxdigital/lagoon-concretecms-base",
+    "description": "Project template for Concrete CMS projects hosted on Lagoon",
+    "type": "project",
+    "license": "MIT",
+    "prefer-stable": true,
+    "require": {
+        "composer/installers": "^2.3",
+        "concrete5/core": "^9.3",
+        "concretecms/dependency-patches": "^1.7"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "mlocati/composer-patcher": true
+        }
+    },
+    "extra": {
+        "allow-subpatches": [
+            "concretecms/dependency-patches"
+        ],
+        "installer-paths": {
+            "public/concrete": [
+                "type:concretecms-core",
+                "type:concrete5-core"
+            ],
+            "public/application/themes/{$name}": [
+                "type:concretecms-theme",
+                "type:concrete5-theme"
+            ],
+            "public/packages/{$name}": [
+                "type:concretecms-package",
+                "type:concrete5-package"
+            ],
+            "public/application/blocks/{$name}": [
+                "type:concretecms-block",
+                "type:concrete5-block"
+            ]
+        }
+    }
+}

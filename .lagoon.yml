@@ -1,0 +1,12 @@
+# The .lagoon.yml file is the central file to set up your project. It contains configuration in order to do the following:
+#
+#  Define routes for accessing your sites.
+#  Define pre-rollout tasks.
+#  Define post-rollout tasks.
+#  Set up SSL certificates.
+#  Add cron jobs for environments.
+
+docker-compose-yaml: docker-compose.yml
+
+project: concretecms-base
+

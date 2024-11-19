@@ -1,0 +1,15 @@
+# ignore system files
+.DS_Store
+thumbs.db
+__MACOSX
+
+# Ignore Composer stuff
+/vendor/
+
+# Ignore Concrete stuff
+/public/concrete
+/public/application/files
+
+# Ignore developer stuff
+/.idea
+/.env
