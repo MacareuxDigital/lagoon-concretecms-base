@@ -1,8 +1,25 @@
 # Concrete CMS Base for lagoon
 
-## Local development
+A template to make Concrete CMS run on Lagoon.
 
-*pygmy* is required to run this project locally. You can install it using the following command:
+* [Lagoon - the developer-focused application delivery platform for Kubernetes](https://docs.lagoon.sh/)
+* [Concrete CMS](https://www.concretecms.org/)
+
+This template includes everything you need to get started with Concrete CMS to run on Lagoon.
+It is based on the [community docker image](https://github.com/concrete5-community/docker5) but modified to work with Lagoon.
+
+## Included Services
+
+This template includes the following services:
+
+* Concrete CMS 9.3
+* PHP 8.3 (FPM)
+* Nginx
+* MariaDB 10.6
+
+## Local environment setup using pygmy
+
+[pygmy](https://pygmy.readthedocs.io/en/mkdocs/) is required to run this project locally. You can install it using the following command:
 
 ```bash
 brew tap pygmystack/pygmy && brew install pygmy
@@ -47,15 +64,25 @@ pygmy clean
 To rebuild the local environment, you can use the following command:
 
 ```bash
-docker compose -d --build
+docker compose down
+docker compose up -d --force-recreate
 ```
 
 ### How to install Concrete
 
+First, access the cli container using the following command:
+
 ```bash
 docker compose exec cli bash
+```
+
+Then, install Concrete CMS using the following command:
+
+```bash
 ./vendor/bin/concrete c5:install -i
 ```
+
+You can use the following information to use in the installation:
 
 | Database          | Value   |
 |-------------------|---------|
