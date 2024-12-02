@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * This is a database configuration file that uses environment variables to set the database connection.
+ * This file is required to keep the database connection settings, because we are mounting only two file systems
+ * for application/files and application/config/generated_overrides, so we don't persist the default database.php file.
+ */
+
 return [
     'default-connection' => 'concrete',
     'connections' => [

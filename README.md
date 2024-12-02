@@ -79,10 +79,12 @@ docker compose exec cli bash
 Then, install Concrete CMS using the following command:
 
 ```bash
-./vendor/bin/concrete c5:install -i
+./vendor/bin/concrete c5:install -i --env=install
 ```
 
-You can use the following information to use in the installation:
+*Note: You must append `--env=install` to ignore the environment check.*
+
+You can use the following information to use in the installation on the local environment:
 
 | Database          | Value   |
 |-------------------|---------|
@@ -92,3 +94,9 @@ You can use the following information to use in the installation:
 | Database Password | lagoon  |
 
 See [MariaDB - Environment Variables](https://docs.lagoon.sh/docker-images/mariadb/#environment-variables)
+
+On amazee.io environment, you can use the following command to get the database information:
+
+```bash
+env | grep MARIADB
+```
