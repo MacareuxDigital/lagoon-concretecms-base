@@ -78,7 +78,7 @@ services:
       lagoon.type: nginx-php-persistent
       lagoon.name: nginx
       lagoon.persistent: /app/public/application/files/
-      lagoon.volumes.config.path: /app/public/application/config/
+      lagoon.volumes.config.path: /app/public/application/config/generated_overrides/
       lando.type: php-fpm
     << : *default-volumes
     depends_on:
