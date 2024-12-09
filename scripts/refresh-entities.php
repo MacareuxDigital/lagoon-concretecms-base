@@ -4,6 +4,7 @@ use Concrete\Core\Database\Connection\Connection;
 use Concrete\Core\Database\DatabaseStructureManager;
 use Concrete\Core\Package\Event\PackageEntities;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Console\Command\Command;
 
 $connection = app(Connection::class);
 /**
@@ -19,3 +20,5 @@ if ($connection->query('show tables')->rowCount()) {
         $manager->refreshEntities();
     }
 }
+
+return Command::SUCCESS;
