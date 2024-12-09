@@ -79,10 +79,8 @@ docker compose exec cli bash
 Then, install Concrete CMS using the following command:
 
 ```bash
-./vendor/bin/concrete c5:install -i --env=install
+./vendor/bin/concrete c5:install -i
 ```
-
-*Note: You must append `--env=install` to ignore the environment check.*
 
 You can use the following information to use in the installation on the local environment:
 
