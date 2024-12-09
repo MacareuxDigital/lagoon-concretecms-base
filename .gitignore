@@ -7,8 +7,8 @@ __MACOSX
 /vendor/
 
 # Ignore Concrete stuff
-/public/concrete
-/public/application/files
+/web/concrete
+/web/application/files
 
 # Ignore developer stuff
 /.idea

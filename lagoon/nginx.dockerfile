@@ -8,4 +8,4 @@ COPY lagoon/nginx/concrete /etc/nginx/conf.d/concrete/
 
 COPY --from=builder /app /app
 
-ENV WEBROOT=public
+ENV WEBROOT=web
