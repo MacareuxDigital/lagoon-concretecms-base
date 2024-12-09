@@ -9,6 +9,7 @@ __MACOSX
 # Ignore Concrete stuff
 /web/concrete
 /web/application/files
+/web/application/languages
 
 # Ignore developer stuff
 /.idea

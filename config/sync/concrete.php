@@ -8,8 +8,8 @@ return [
     'debug' => [
         'hide_keys' => [
             // Hide database password and hostname in whoops output if supported
-            '_ENV' => ['DB_PASSWORD', 'DB_HOSTNAME'],
-            '_SERVER' => ['DB_PASSWORD', 'DB_HOSTNAME'],
+            '_ENV' => ['MARIADB_PASSWORD', 'MARIADB_HOST'],
+            '_SERVER' => ['MARIADB_PASSWORD', 'MARIADB_HOST'],
         ]
     ]
 ];
