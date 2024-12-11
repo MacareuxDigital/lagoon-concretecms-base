@@ -11,21 +11,12 @@ docker-compose-yaml: docker-compose.yml
 project: concretecms-base
 
 tasks:
-  pre-rollout:
-    - run:
-        name: entities refresh on cli pod
-        command: |
-          if [[ $(/app/vendor/bin/concrete c5:is-installed) == "Concrete is installed" ]]; then
-            /app/vendor/bin/concrete c5:entities:refresh
-          fi
-        service: cli
-        shell: bash
-    - run:
-        name: entities refresh on nginx pod
-        command: |
-          if [[ $(/app/vendor/bin/concrete c5:is-installed) == "Concrete is installed" ]]; then
-            /app/vendor/bin/concrete c5:entities:refresh
-          fi
-        service: nginx
-        container: php
-        shell: bash
+#  pre-rollout:
+#    - run:
+#        name: entities refresh
+#        command: |
+#          if [[ $(/app/vendor/bin/concrete c5:is-installed) == "Concrete is installed" ]]; then
+#            /app/vendor/bin/concrete c5:entities:refresh
+#          fi
+#        service: cli
+#        shell: bash
