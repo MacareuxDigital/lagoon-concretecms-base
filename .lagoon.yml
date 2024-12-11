@@ -14,6 +14,9 @@ tasks:
   pre-rollout:
     - run:
         name: entities refresh
-        command: /app/vendor/bin/concrete c5:entities:refresh
+        command: |
+          if [[ $(/app/vendor/bin/concrete c5:is-installed) == "Concrete is installed" ]]; then
+            /app/vendor/bin/concrete c5:entities:refresh
+          fi
         service: cli
         shell: bash
