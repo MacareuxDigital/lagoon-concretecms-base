@@ -1,4 +1,4 @@
-FROM uselagoon/php-8.3-cli-drupal:latest
+FROM uselagoon/php-8.3-cli:latest
 
 COPY composer.* /app/
 RUN composer install --no-dev --prefer-dist
