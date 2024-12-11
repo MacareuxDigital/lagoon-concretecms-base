@@ -1,0 +1,8 @@
+.git
+.idea
+.dockerignore
+.gitignore
+docker-compose.yml
+README.md
+vendor
+web/application/files
