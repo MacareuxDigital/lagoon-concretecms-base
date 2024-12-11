@@ -11,9 +11,9 @@ docker-compose-yaml: docker-compose.yml
 project: concretecms-base
 
 tasks:
-#  pre-rollout:
-#    - run:
-#        name: entities refresh
-#        command: /app/vendor/bin/concrete c5:exec /app/scripts/refresh-entities.php
-#        service: cli
-#        shell: bash
+  pre-rollout:
+    - run:
+        name: entities refresh
+        command: /app/vendor/bin/concrete c5:entities:refresh
+        service: cli
+        shell: bash
