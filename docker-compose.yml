@@ -32,7 +32,7 @@ services:
     build:
       context: .
       dockerfile: lagoon/cli.dockerfile
-    image: *lagoon-project
+    image: &cli-image ${COMPOSE_PROJECT_NAME:-concretecms-base}-cli # this image will be reused as `CLI_IMAGE` in subsequent Docker builds
     labels:
       # Lagoon labels
       lagoon.type: cli-persistent
@@ -51,7 +51,7 @@ services:
       context: .
       dockerfile: lagoon/nginx.dockerfile
       args:
-        CLI_IMAGE: *lagoon-project # Inject the name of the cli image
+        CLI_IMAGE: *cli-image # Inject the name of the cli image
     labels:
       lagoon.type: nginx-php-persistent
       lagoon.persistent: /app/web/application/files/ # location where the persistent storage should be mounted
@@ -64,6 +64,7 @@ services:
       - cli # basically just tells docker-compose to build the cli first
     environment:
       << : *default-environment # loads the defined environment variables from the top
+      LAGOON_LOCALDEV_URL: *default-url
     networks:
       - amazeeio-network
       - default
@@ -73,21 +74,21 @@ services:
       context: .
       dockerfile: lagoon/php.dockerfile
       args:
-        CLI_IMAGE: *lagoon-project
+        CLI_IMAGE: *cli-image
     labels:
       lagoon.type: nginx-php-persistent
-      lagoon.name: nginx
+      lagoon.name: nginx # we want this service be part of the nginx pod in Lagoon
       lagoon.persistent: /app/web/application/files/
       lagoon.volumes.config.path: /app/web/application/config/generated_overrides/
       lando.type: php-fpm
     << : *default-volumes
     depends_on:
-      - cli
+      - cli # basically just tells docker compose to build the cli first
     environment:
-      << : *default-environment
+      << : *default-environment # loads the defined environment variables from the top
 
   mariadb:
-    image: uselagoon/mariadb-10.6:latest
+    image: uselagoon/mariadb-10.11:latest
     labels:
       lagoon.type: mariadb
       lando.type: mariadb
