@@ -8,4 +8,9 @@ COPY lagoon/nginx/concrete /etc/nginx/conf.d/concrete/
 
 COPY --from=builder /app /app
 
+WORKDIR /app
+RUN if [ "$(./vendor/bin/concrete c5:is-installed)" = "Concrete is installed" ]; then \
+        ./vendor/bin/concrete orm:generate-proxies; \
+    fi
+
 ENV WEBROOT=web

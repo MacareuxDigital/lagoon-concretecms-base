@@ -7,7 +7,7 @@ RUN mkdir -p -v -m775 /app/web/application/files
 WORKDIR /app
 
 RUN if [ "$(./vendor/bin/concrete c5:is-installed)" = "Concrete is installed" ]; then \
-        ./vendor/bin/concrete c5:entities:refresh; \
+        ./vendor/bin/concrete orm:generate-proxies; \
     fi
 
 # Define where the Concrete CMS webroot is located
