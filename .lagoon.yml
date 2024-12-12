@@ -15,15 +15,7 @@ tasks:
     - run:
         name: update language files
         command: |
-          echo "Checking if Concrete is installed..."
-          result=$(/app/vendor/bin/concrete c5:is-installed)
-          echo "Result: $result"
-          if [ "$result" = "Concrete is installed" ]; then
-            echo "Concrete is installed. Installing language files..."
-            /app/vendor/bin/concrete c5:language-install --add ja_JP;
-          else
-            echo "Concrete is not installed."
-          fi
+          /app/vendor/bin/concrete c5:language-install --add ja_JP
         service: nginx
         container: php
 
@@ -32,9 +24,9 @@ environments:
     cronjobs:
       - name: messenger consume
         schedule: "M * * * *" # Once per hour, at a random minute.
-        command: /app/scripts/check_and_run.sh /app/vendor/bin/concrete messenger:consume async --time-limit=3600
+        command: /app/vendor/bin/concrete messenger:consume async --time-limit=3600
         service: cli
       - name: scheduling worker
         schedule: "* * * * *" # Every minute.
-        command: /app/scripts/check_and_run.sh /app/vendor/bin/concrete concrete:scheduler:run
+        command: /app/vendor/bin/concrete concrete:scheduler:run
         service: cli
