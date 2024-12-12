@@ -1,6 +1,37 @@
 <?php
 
 return [
+    /*
+     * ------------------------------------------------------------------------
+     * Cache settings
+     * ------------------------------------------------------------------------
+     */
+    'cache' => [
+        'directory' => '/app/cache',
+        'page' => [
+            'directory' => '/app/cache/pages',
+        ],
+        'levels' => [
+            'overrides' => [
+                'drivers' => [
+                    'core_filesystem' => [
+                        'options' => [
+                            'path' => '/app/cache/overrides',
+                        ],
+                    ],
+                ],
+            ],
+            'expensive' => [
+                'drivers' => [
+                    'core_filesystem' => [
+                        'options' => [
+                            'path' =>  '/app/cache/expensive',
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
     'updates' => [
         // Skip the automatic check of new Concrete versions availability
         'skip_core' => true,
