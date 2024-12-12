@@ -8,10 +8,10 @@ __MACOSX
 
 # Ignore Concrete stuff
 /web/concrete
+/web/application/cache
 /web/application/files
 /web/application/languages
 /web/application/config/database.php
-/web/application/config/doctrine/*
 /web/application/config/generated_overrides/*
 
 # Ignore developer stuff

@@ -15,7 +15,7 @@ This template includes the following services:
 * Concrete CMS 9.3
 * PHP 8.3 (FPM)
 * Nginx
-* MariaDB 10.6
+* MariaDB 10.11
 
 ## Local environment setup using pygmy
 
@@ -68,7 +68,7 @@ docker compose down
 docker compose up -d --force-recreate
 ```
 
-### How to install Concrete
+### Install Concrete
 
 First, access the cli container using the following command:
 
@@ -79,7 +79,7 @@ docker compose exec cli bash
 Then, install Concrete CMS using the following command:
 
 ```bash
-./vendor/bin/concrete c5:install -i
+./vendor/bin/concrete c5:install -i --env=install
 ```
 
 You can use the following information to use in the installation on the local environment:
@@ -98,3 +98,8 @@ On amazee.io environment, you can use the following command to get the database 
 ```bash
 env | grep MARIADB
 ```
+
+## Update Concrete
+
+You need to update the doctrine proxy classes and commit them after updating the Concrete CMS. You can use the following command to update the doctrine proxy classes:
+
