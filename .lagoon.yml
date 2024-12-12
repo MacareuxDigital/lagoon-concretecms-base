@@ -26,15 +26,9 @@ environments:
     cronjobs:
       - name: messenger consume
         schedule: "M * * * *" # Once per hour, at a random minute.
-        command: |
-          if [[ $("/app/vendor/bin/concrete c5:is-installed") == "Concrete is installed" ]]; then
-            /app/vendor/bin/concrete messenger:consume async --time-limit=3600
-          fi
+        command: /scripts/check_and_run.sh /app/vendor/bin/concrete messenger:consume async --time-limit=3600
         service: cli
       - name: scheduling worker
         schedule: "* * * * *" # Every minute.
-        command: |
-            if [[ $("/app/vendor/bin/concrete c5:is-installed") == "Concrete is installed" ]]; then
-                /app/vendor/bin/concrete concrete:scheduler:run
-            fi
+        command: /scripts/check_and_run.sh /app/vendor/bin/concrete concrete:scheduler:run
         service: cli
