@@ -14,7 +14,10 @@ tasks:
   pre-rollout:
     - run:
         name: update language files
-        command: /app/scripts/check_and_run.sh /app/vendor/bin/concrete c5:language-install --update
+        command: |
+          if [[ $("/app/vendor/bin/concrete c5:is-installed") == "Concrete is installed" ]]; then
+            /app/vendor/bin/concrete c5:language-install --update
+          fi
         service: nginx
         container: php
 
