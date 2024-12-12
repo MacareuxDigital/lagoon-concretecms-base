@@ -15,8 +15,14 @@ tasks:
     - run:
         name: update language files
         command: |
-          if [[ "$(/app/vendor/bin/concrete c5:is-installed)" == "Concrete is installed" ]]; then
+          echo "Checking if Concrete is installed..."
+          result=$(/app/vendor/bin/concrete c5:is-installed)
+          echo "Result: $result"
+          if [ "$result" = "Concrete is installed" ]; then
+            echo "Concrete is installed. Installing language files..."
             /app/vendor/bin/concrete c5:language-install --add ja_JP;
+          else
+            echo "Concrete is not installed."
           fi
         service: nginx
         container: php
