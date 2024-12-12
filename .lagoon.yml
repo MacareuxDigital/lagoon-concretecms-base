@@ -15,8 +15,26 @@ tasks:
     - run:
         name: update language files
         command: |
-          if [[ $(/app/vendor/bin/concrete c5:is-installed) == "Concrete is installed" ]]; then
+          if [[ $("/app/vendor/bin/concrete c5:is-installed") == "Concrete is installed" ]]; then
             /app/vendor/bin/concrete c5:language-install --update
           fi
         service: nginx
         container: php
+
+environments:
+  master:
+    cronjobs:
+      - name: messenger consume
+        schedule: "M * * * *" # Once per hour, at a random minute.
+        command: |
+          if [[ $("/app/vendor/bin/concrete c5:is-installed") == "Concrete is installed" ]]; then
+            /app/vendor/bin/concrete messenger:consume async --time-limit=3600
+          fi
+        service: cli
+      - name: scheduling worker
+        schedule: "* * * * *" # Every minute.
+        command: |
+            if [[ $("/app/vendor/bin/concrete c5:is-installed") == "Concrete is installed" ]]; then
+                /app/vendor/bin/concrete concrete:scheduler:run
+            fi
+        service: cli
