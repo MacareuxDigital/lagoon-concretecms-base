@@ -11,7 +11,7 @@ docker-compose-yaml: docker-compose.yml
 project: concretecms-base
 
 tasks:
-  pre-rollout:
+  post-rollout:
     - run:
         name: update language files
         command: |
