@@ -7,16 +7,16 @@ return [
      * ------------------------------------------------------------------------
      */
     'cache' => [
-        'directory' => '/app/cache',
+        'directory' => '/app/web/application/cache',
         'page' => [
-            'directory' => '/app/cache/pages',
+            'directory' => '/app/web/application/cache/pages',
         ],
         'levels' => [
             'overrides' => [
                 'drivers' => [
                     'core_filesystem' => [
                         'options' => [
-                            'path' => '/app/cache/overrides',
+                            'path' => '/app/web/application/cache/overrides',
                         ],
                     ],
                 ],
@@ -25,7 +25,7 @@ return [
                 'drivers' => [
                     'core_filesystem' => [
                         'options' => [
-                            'path' =>  '/app/cache/expensive',
+                            'path' =>  '/app/web/application/cache/expensive',
                         ],
                     ],
                 ],
