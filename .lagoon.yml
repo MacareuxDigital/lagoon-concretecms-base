@@ -14,7 +14,7 @@ tasks:
   pre-rollout:
     - run:
         name: update language files
-        command: /scripts/check_and_run.sh /app/vendor/bin/concrete c5:language-install --update
+        command: /app/scripts/check_and_run.sh /app/vendor/bin/concrete c5:language-install --update
         service: nginx
         container: php
 
@@ -23,9 +23,9 @@ environments:
     cronjobs:
       - name: messenger consume
         schedule: "M * * * *" # Once per hour, at a random minute.
-        command: /scripts/check_and_run.sh /app/vendor/bin/concrete messenger:consume async --time-limit=3600
+        command: /app/scripts/check_and_run.sh /app/vendor/bin/concrete messenger:consume async --time-limit=3600
         service: cli
       - name: scheduling worker
         schedule: "* * * * *" # Every minute.
-        command: /scripts/check_and_run.sh /app/vendor/bin/concrete concrete:scheduler:run
+        command: /app/scripts/check_and_run.sh /app/vendor/bin/concrete concrete:scheduler:run
         service: cli
