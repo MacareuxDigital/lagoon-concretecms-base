@@ -13,6 +13,10 @@ project: concretecms-base
 tasks:
   post-rollout:
     - run:
+        name: generate doctrine proxies
+        command: /app/vendor/bin/concrete orm:generate-proxies
+        service: cli
+    - run:
         name: update language files
         command: |
           /app/vendor/bin/concrete c5:language-install --add ja_JP
