@@ -96,6 +96,7 @@ services:
       - "3306" # exposes the port 3306 with a random local port, find it with `docker-compose port mariadb 3306`
     environment:
       << : *default-environment
+      TZ: "Asia/Tokyo" # Set the timezone same as the php.ini
     volumes:
       - db:/var/lib/mysql
 
