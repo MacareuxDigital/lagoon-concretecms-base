@@ -17,6 +17,13 @@ This template includes the following services:
 * Nginx
 * MariaDB 10.11
 
+## Initial Setup
+
+You can change the following values to fit your project:
+
+* Language code to install translations in `.lagoon.yml` file. Default is `ja_JP`.
+* Time zone of your system default in `docker-compose.yml` and `php.ini` files. Default is `Asia/Tokyo`.
+
 ## Local environment setup using pygmy
 
 [pygmy](https://pygmy.readthedocs.io/en/mkdocs/) is required to run this project locally. You can install it using the following command:
@@ -101,5 +108,9 @@ env | grep MARIADB
 
 ## Update Concrete
 
-You need to update the doctrine proxy classes and commit them after updating the Concrete CMS. You can use the following command to update the doctrine proxy classes:
+You need to update the doctrine proxy classes and commit them after updating the Concrete CMS.
+You can use the following command to update the doctrine proxy classes:
 
+```bash
+./vendor/bin/concrete orm:generate-proxies
+```

@@ -14,12 +14,17 @@ tasks:
   post-rollout:
     - run:
         name: generate doctrine proxies
-        command: /app/vendor/bin/concrete orm:generate-proxies
+        command: |
+          if [ ! php scripts/is_installed.php ]; then
+            /app/vendor/bin/concrete orm:generate-proxies
+          fi
         service: cli
     - run:
         name: update language files
         command: |
-          /app/vendor/bin/concrete c5:language-install --add ja_JP
+          if [ ! php scripts/is_installed.php ]; then
+            /app/vendor/bin/concrete c5:language-update --add ja_JP
+          fi
         service: nginx
         container: php
 
