@@ -13,6 +13,15 @@ project: concretecms-base
 tasks:
   post-rollout:
     - run:
+        name: script debug
+        command: |
+          if scripts/is_installed; then
+            echo "Concrete is installed"
+          else
+            echo "Concrete is not installed"
+          fi
+        service: cli
+    - run:
         name: generate doctrine proxies
         command: |
           if scripts/is_installed; then
