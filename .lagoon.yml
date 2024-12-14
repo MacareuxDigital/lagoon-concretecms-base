@@ -15,7 +15,7 @@ tasks:
     - run:
         name: script debug
         command: |
-          if [[ $(scripts/is_installed) == 0 ]]; then
+          if [[ $(scripts/is_installed) -eq 0 ]]; then
             echo "Concrete is installed"
           else
             echo "Concrete is not installed"
@@ -24,14 +24,14 @@ tasks:
     - run:
         name: generate doctrine proxies
         command: |
-          if [[ $(scripts/is_installed) == 0 ]]; then
+          if [[ $(scripts/is_installed) -eq 0 ]]; then
             /app/vendor/bin/concrete orm:generate-proxies
           fi
         service: cli
     - run:
         name: update language files
         command: |
-          if [[ $(scripts/is_installed) == 0 ]]; then
+          if [[ $(scripts/is_installed) -eq 0 ]]; then
             /app/vendor/bin/concrete c5:language-update --add ja_JP
           fi
         service: nginx
