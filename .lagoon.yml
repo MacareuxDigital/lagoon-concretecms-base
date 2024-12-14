@@ -14,7 +14,7 @@ tasks:
   post-rollout:
     - run:
         name: script debug
-        command: scripts/debug
+        command: scripts/is_installed
         service: cli
     - run:
         name: generate doctrine proxies
