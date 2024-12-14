@@ -12,9 +12,9 @@ return static function (): int {
 
     if ($connection->query('SHOW TABLES')->rowCount() > 0) {
         // Concrete is installed
-        return 0;
+        return 1;
     }
 
     // Concrete is not installed
-    return 1;
+    return 0;
 };
