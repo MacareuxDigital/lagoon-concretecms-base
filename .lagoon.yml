@@ -15,14 +15,14 @@ tasks:
     - run:
         name: generate doctrine proxies
         command: |
-          if [ ! php scripts/is_installed.php ]; then
+          if scripts/is_installed; then
             /app/vendor/bin/concrete orm:generate-proxies
           fi
         service: cli
     - run:
         name: update language files
         command: |
-          if [ ! php scripts/is_installed.php ]; then
+          if scripts/is_installed; then
             /app/vendor/bin/concrete c5:language-update --add ja_JP
           fi
         service: nginx
