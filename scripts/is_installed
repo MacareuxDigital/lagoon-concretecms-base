@@ -15,7 +15,7 @@ try {
 
     $stmt = $pdo->query('SHOW TABLES');
     if ($stmt->rowCount() > 0) {
-        // Concrete is installed
+        echo "Installed";
         return 0;
     }
 } catch (PDOException $e) {
@@ -23,6 +23,6 @@ try {
     fwrite(STDERR, "Database connection error: " . $e->getMessage() . PHP_EOL);
 }
 
-
 // Concrete is not installed
+echo "Not installed";
 return 1;
