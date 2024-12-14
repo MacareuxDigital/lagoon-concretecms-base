@@ -14,12 +14,7 @@ tasks:
   post-rollout:
     - run:
         name: script debug
-        command: |
-          if [[ $(scripts/is_installed) == "Installed" ]]; then
-            echo "Concrete is installed"
-          else
-            echo "Concrete is not installed"
-          fi
+        command: scripts/debug
         service: cli
     - run:
         name: generate doctrine proxies
