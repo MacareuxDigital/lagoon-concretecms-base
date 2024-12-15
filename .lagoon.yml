@@ -19,18 +19,20 @@ tasks:
     - run:
         name: generate doctrine proxies
         command: |
-          if [[ $(scripts/is_installed) = "Installed" ]]; then
+          if [[ $(scripts/is_installed) == "Installed" ]]; then
             /app/vendor/bin/concrete orm:generate-proxies
           fi
         service: cli
+        shell: bash
     - run:
         name: update language files
         command: |
-          if [[ $(scripts/is_installed) = "Installed" ]]; then
+          if [[ $(scripts/is_installed) == "Installed" ]]; then
             /app/vendor/bin/concrete c5:language-update --add ja_JP
           fi
         service: nginx
         container: php
+        shell: bash
 
 environments:
   master:
