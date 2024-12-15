@@ -8,6 +8,7 @@ return [
      */
     'cache' => [
         'directory' => '/app/web/application/cache',
+        'directory_relative' => '/application/cache',
         'page' => [
             'directory' => '/app/web/application/cache/pages',
         ],
