@@ -1,8 +1,5 @@
 FROM uselagoon/php-8.3-cli:latest
 
-# Copy the php.ini file to customize the PHP configuration
-COPY lagoon/php/php.ini /usr/local/etc/php/conf.d/10-concretecms-base.ini
-
 # Install composer dependencies
 COPY composer.* /app/
 RUN composer install --no-dev --prefer-dist

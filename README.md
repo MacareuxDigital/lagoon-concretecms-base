@@ -22,7 +22,6 @@ This template includes the following services:
 You can change the following values to fit your project:
 
 * Language code to install translations in `.lagoon.yml` file. Default is `ja_JP`.
-* Time zone of your system default in `docker-compose.yml` and `php.ini` files. Default is `Asia/Tokyo`.
 
 ## Local environment setup using pygmy
 
