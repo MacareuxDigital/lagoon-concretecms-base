@@ -33,7 +33,7 @@ tasks:
         container: php
 
 environments:
-  master:
+  main:
     cronjobs:
       - name: messenger consume
         schedule: "M * * * *" # Once per hour, at a random minute.
