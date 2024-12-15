@@ -6,7 +6,6 @@ A template to make Concrete CMS run on Lagoon.
 * [Concrete CMS](https://www.concretecms.org/)
 
 This template includes everything you need to get started with Concrete CMS to run on Lagoon.
-It was referenced [official composer base](https://github.com/concretecms/composer) and [community docker image](https://github.com/concrete5-community/docker5) but modified to work with Lagoon.
 
 ## Included Services
 
@@ -127,15 +126,6 @@ lagoon ssh -i <your_key> -p <project_name> -e <environment> -s=nginx -c=php
 ```
 
 Then, you can generate the proxy classes using the following command:
-
-```bash
-./vendor/bin/concrete orm:generate-proxies
-```
-
-## Update Concrete
-
-You need to update the doctrine proxy classes and commit them after updating the Concrete CMS.
-You can use the following command to update the doctrine proxy classes:
 
 ```bash
 ./vendor/bin/concrete orm:generate-proxies
