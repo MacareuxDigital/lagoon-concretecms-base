@@ -97,6 +97,7 @@ services:
     environment:
       << : *default-environment
       TZ: "Asia/Tokyo" # Set the timezone same as the php.ini
+    command: --default-time-zone=+09:00 # Set the timezone same as the php.ini
     volumes:
       - db:/var/lib/mysql
 
