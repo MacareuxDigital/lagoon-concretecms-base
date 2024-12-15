@@ -1,4 +1,4 @@
-# Concrete CMS Base for lagoon
+# Concrete CMS Base for Lagoon
 
 A template to make Concrete CMS run on Lagoon.
 
@@ -99,10 +99,37 @@ You can use the following information to use in the installation on the local en
 
 See [MariaDB - Environment Variables](https://docs.lagoon.sh/docker-images/mariadb/#environment-variables)
 
-On amazee.io environment, you can use the following command to get the database information:
+## Install Concrete CMS on Amazee.io
+
+First, access the cli container using the following command:
+
+```bash
+lagoon ssh -i <your_key> -p <project_name> -e <environment>
+```
+
+Then, get the database information using the following command:
 
 ```bash
 env | grep MARIADB
+```
+
+Now you can install Concrete CMS using the following command:
+
+```bash
+./vendor/bin/concrete c5:install -i --env=install
+```
+
+After installing Concrete CMS, you must generate the proxy classes on the nginx/php container.
+You can access the nginx/php container with -s and -c options.
+
+```bash
+lagoon ssh -i <your_key> -p <project_name> -e <environment> -s=nginx -c=php
+```
+
+Then, you can generate the proxy classes using the following command:
+
+```bash
+./vendor/bin/concrete orm:generate-proxies
 ```
 
 ## Update Concrete
