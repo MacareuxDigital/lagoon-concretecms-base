@@ -17,6 +17,7 @@ tasks:
         command: |
           /app/vendor/bin/concrete
           /app/vendor/bin/concrete c5:is-installed
+          ls -ll /app/web/application/config
         service: cli
     - run:
         name: generate doctrine proxies
