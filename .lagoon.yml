@@ -20,7 +20,7 @@ tasks:
         name: generate doctrine proxies
         command: |
           if [ "$(scripts/is_installed)" = "Installed" ]; then
-            /app/vendor/bin/concrete orm:generate-proxies
+            /app/vendor/bin/concrete orm:generate-proxies --env=live
           fi
         service: cli
     - run:
