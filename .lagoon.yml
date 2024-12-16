@@ -14,13 +14,13 @@ tasks:
   post-rollout:
     - run:
         name: debug
-        command: /app/vendor/bin/concrete c5:info
+        command: /app/vendor/bin/concrete
         service: cli
     - run:
         name: generate doctrine proxies
         command: |
           if [ "$(scripts/is_installed)" = "Installed" ]; then
-            /app/vendor/bin/concrete orm:generate-proxies --env=live
+            /app/vendor/bin/concrete orm:generate-proxies
           fi
         service: cli
     - run:
