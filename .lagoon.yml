@@ -13,8 +13,8 @@ project: concretecms-base
 tasks:
   post-rollout:
     - run:
-        name: script debug
-        command: scripts/is_installed
+        name: debug
+        command: /app/vendor/bin/concrete c5:info
         service: cli
     - run:
         name: generate doctrine proxies
