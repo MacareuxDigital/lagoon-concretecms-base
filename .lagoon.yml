@@ -14,7 +14,9 @@ tasks:
   post-rollout:
     - run:
         name: debug
-        command: /app/vendor/bin/concrete
+        command: |
+          /app/vendor/bin/concrete
+          /app/vendor/bin/concrete c5:is-installed
         service: cli
     - run:
         name: generate doctrine proxies
@@ -25,10 +27,7 @@ tasks:
         service: cli
     - run:
         name: update language files
-        command: |
-          if [ "$(scripts/is_installed)" = "Installed" ]; then
-            /app/vendor/bin/concrete c5:install-language --add ja_JP
-          fi
+        command: /app/vendor/bin/concrete c5:install-language --add ja_JP
         service: nginx
         container: php
 
