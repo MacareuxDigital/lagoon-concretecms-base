@@ -27,7 +27,7 @@ tasks:
         name: update language files
         command: |
           if [ "$(scripts/is_installed)" = "Installed" ]; then
-            /app/vendor/bin/concrete c5:language-update --add ja_JP
+            /app/vendor/bin/concrete c5:install-language --add ja_JP
           fi
         service: nginx
         container: php
