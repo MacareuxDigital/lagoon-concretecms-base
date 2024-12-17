@@ -12,7 +12,6 @@ __MACOSX
 /web/application/files
 /web/application/languages
 /web/application/config/database.php
-/web/application/config/doctrine/*
 /web/application/config/generated_overrides/*
 
 # Ignore developer stuff
