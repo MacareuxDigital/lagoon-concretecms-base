@@ -130,3 +130,8 @@ Then, you can generate the proxy classes using the following command:
 ```bash
 ./vendor/bin/concrete orm:generate-proxies
 ```
+
+## Important Notes
+
+After upgrading Concrete or applying any database schema changes,
+you must commit the changes of the doctrine proxy classes.
