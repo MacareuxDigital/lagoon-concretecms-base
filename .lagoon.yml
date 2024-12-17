@@ -24,8 +24,10 @@ environments:
       - name: messenger consume
         schedule: "M * * * *" # Once per hour, at a random minute.
         command: /app/vendor/bin/concrete messenger:consume async --time-limit=3600
-        service: cli
+        service: nginx
+        container: php
       - name: scheduling worker
         schedule: "* * * * *" # Every minute.
         command: /app/vendor/bin/concrete concrete:scheduler:run
-        service: cli
+        service: nginx
+        container: php
