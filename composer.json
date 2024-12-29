@@ -10,6 +10,9 @@
         "concretecms/dependency-patches": "^1.7"
     },
     "config": {
+        "platform": {
+            "php": "8.3"
+        },
         "allow-plugins": {
             "composer/installers": true,
             "mlocati/composer-patcher": true
