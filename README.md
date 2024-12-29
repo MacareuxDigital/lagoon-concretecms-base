@@ -20,6 +20,9 @@ This template includes the following services:
 
 You can change the following values to fit your project:
 
+* `COMPOSE_PROJECT_NAME` in `.env` file. This value is used for container names
+* `project` value in `.lagoon.yml` file
+* `&lagoon-project` value in `docker-compose.yml`
 * Language code to install translations in `.lagoon.yml` file. Default is `ja_JP`.
 
 ## Local environment setup using pygmy
