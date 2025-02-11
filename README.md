@@ -101,6 +101,10 @@ You can use the following information to use in the installation on the local en
 
 See [MariaDB - Environment Variables](https://docs.lagoon.sh/docker-images/mariadb/#environment-variables)
 
+### References
+
+- [Connecting to MySQL externally - pygmy](https://pygmystack.github.io/pygmy/connect_to_mysql_from_external/)
+
 ## Install Concrete CMS on Amazee.io
 
 First, access the cli container using the following command:
