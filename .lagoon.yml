@@ -29,3 +29,28 @@ environments:
         schedule: "* * * * *" # Every minute.
         command: /app/vendor/bin/concrete concrete:scheduler:run
         service: cli
+
+lagoon-sync:
+  mariadb:
+    type: mariadb
+    config:
+      hostname: "${MARIADB_HOST:-mariadb}"
+      username: "${MARIADB_USERNAME:-lagoon}"
+      password: "${MARIADB_PASSWORD:-lagoon}"
+      port:     "${MARIADB_PORT:-3306}"
+      database: "${MARIADB_DATABASE:-lagoon}"
+    local:
+      config:
+        hostname: "${MARIADB_HOST:-mariadb}"
+        username: "${MARIADB_USERNAME:-lagoon}"
+        password: "${MARIADB_PASSWORD:-lagoon}"
+        port:     "${MARIADB_PORT:-3306}"
+        database: "${MARIADB_DATABASE:-lagoon}"
+  cli:
+    type: files
+    config:
+      sync-directory: "/app/web/application/files/"
+  cli-config:
+    type: files
+    config:
+      sync-directory: "/app/web/application/config/generated_overrides/"
