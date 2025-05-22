@@ -69,11 +69,18 @@ If you want to stop and remove the local environment, you can use the following 
 pygmy clean
 ```
 
-To rebuild the local environment, you can use the following command:
+To recreate the containers, you can use the following command:
 
 ```bash
 docker compose down
 docker compose up -d --force-recreate
+```
+
+To rebuild images, you can use the following command:
+
+```bash
+docker-compose down
+docker-compose up -d --build
 ```
 
 ### Install Concrete
@@ -129,13 +136,42 @@ After installing Concrete CMS, you must generate the proxy classes on the nginx/
 You can access the nginx/php container with -s and -c options.
 
 ```bash
-lagoon ssh -i <your_key> -p <project_name> -e <environment> -s=nginx -c=php
+lagoon ssh -i <your_key> -p <project> -e <environment> -s=nginx -c=php
 ```
 
 Then, you can generate the proxy classes using the following command:
 
 ```bash
 ./vendor/bin/concrete orm:generate-proxies
+```
+
+## How to sync between local and remote containers
+
+You can use `lagoon-sync` command to sync between local and remote containers.
+If you want to use it, you need to access the local cli container.
+
+Sync remote database to local database:
+
+```bash
+lagoon-sync sync mariadb -p <project> -e <environment>
+```
+
+Sync remote files to local files:
+
+```bash
+lagoon-sync sync cli -p <project> -e <environment>
+```
+
+Sync remote config files to local config files:
+
+```bash
+lagoon-sync sync cli-config -p <project> -e <environment>
+```
+
+Sync local database to remote database:
+
+```bash
+lagoon-sync sync mariadb -p <project> -e local -t <environment>
 ```
 
 ## Important Notes
