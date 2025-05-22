@@ -39,6 +39,13 @@ lagoon-sync:
       password: "${MARIADB_PASSWORD:-lagoon}"
       port:     "${MARIADB_PORT:-3306}"
       database: "${MARIADB_DATABASE:-lagoon}"
+    local:
+      config:
+        hostname: "${MARIADB_HOST:-mariadb}"
+        username: "${MARIADB_USERNAME:-lagoon}"
+        password: "${MARIADB_PASSWORD:-lagoon}"
+        port:     "${MARIADB_PORT:-3306}"
+        database: "${MARIADB_DATABASE:-lagoon}"
   cli:
     type: files
     config:
