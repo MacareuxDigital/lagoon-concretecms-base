@@ -8,7 +8,7 @@ x-volumes:
       - .:/app:delegated ### Local overrides to mount host filesystem. Automatically removed in CI and PROD.
       - files:/app/web/application/files
       - config:/app/web/application/config/generated_overrides
-      - languages:/app/web/application/languages
+      - languages:/app/web/application/languages/site
 
 x-environment:
   &default-environment
@@ -43,7 +43,7 @@ services:
       lagoon.persistent.name: nginx # mount the persistent storage of nginx into this container
       lagoon.persistent: /app/web/application/files/ # location where the persistent storage should be mounted
       lagoon.volumes.config.path: /app/web/application/config/generated_overrides/ # location where the additional storage should be mounted
-      lagoon.volumes.languages.path: /app/web/application/languages/ # location where the additional storage should be mounted
+      lagoon.volumes.languages.path: /app/web/application/languages/site/ # location where the additional storage should be mounted
       lando.type: php-cli
     << : *default-volumes # loads the defined volumes from the top
     volumes_from: ### mount the ssh-agent from the pygmy or cachalot ssh-agent. Automatically removed in CI.
@@ -61,7 +61,7 @@ services:
       lagoon.type: nginx-php-persistent
       lagoon.persistent: /app/web/application/files/ # location where the persistent storage should be mounted
       lagoon.volumes.config.path: /app/web/application/config/generated_overrides/ # location where the additional storage should be mounted
-      lagoon.volumes.languages.path: /app/web/application/languages/ # location where the additional storage should be mounted
+      lagoon.volumes.languages.path: /app/web/application/languages/site/ # location where the additional storage should be mounted
       lando.type: nginx
     ports:
       - "8080" # exposes the port 8080 with a random local port, find it with `docker-compose port nginx 8080`
@@ -86,7 +86,7 @@ services:
       lagoon.name: nginx # we want this service be part of the nginx pod in Lagoon
       lagoon.persistent: /app/web/application/files/
       lagoon.volumes.config.path: /app/web/application/config/generated_overrides/
-      lagoon.volumes.languages.path: /app/web/application/languages/ # location where the additional storage should be mounted
+      lagoon.volumes.languages.path: /app/web/application/languages/site/ # location where the additional storage should be mounted
       lando.type: php-fpm
     << : *default-volumes
     depends_on:
