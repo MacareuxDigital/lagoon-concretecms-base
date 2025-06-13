@@ -176,5 +176,17 @@ lagoon-sync sync mariadb -p <project> -e local -t <environment>
 
 ## Important Notes
 
+### Doctrine Proxy Classes
+
 After upgrading Concrete or applying any database schema changes,
 you must commit the changes of the doctrine proxy classes.
+
+### Fastly CDN
+
+If you are enabled Fastly Managed CDN, you need to comment out the following line in `web/index.php`:
+
+```php
+if (isset($_SERVER['HTTP_TRUE_CLIENT_IP'])) {
+    $_SERVER['HTTP_X_FORWARDED_FOR'] = $_SERVER['HTTP_TRUE_CLIENT_IP'];
+}
+```
