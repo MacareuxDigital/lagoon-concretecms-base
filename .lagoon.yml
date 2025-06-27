@@ -22,8 +22,8 @@ tasks:
     - run:
           name: Ensure /application/languages is writable
           command: |
-            mkdir -p /app/application/languages && \
-            chmod -R 775 /app/application/languages
+            mkdir -p /app/web/application/languages && \
+            chmod -R 775 /app/web/application/languages
           service: cli
     - run:
         name: update language files
