@@ -20,6 +20,12 @@ tasks:
         service: cli
   post-rollout:
     - run:
+          name: Ensure /application/languages is writable
+          command: |
+            mkdir -p /app/application/languages && \
+            chmod -R 775 /app/application/languages
+          service: cli
+    - run:
         name: update language files
         command: /app/vendor/bin/concrete c5:install-language --add ja_JP
         service: nginx
