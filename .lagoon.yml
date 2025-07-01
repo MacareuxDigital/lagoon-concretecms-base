@@ -26,7 +26,7 @@ tasks:
         container: php
     - run:
         name: Run Concrete CMS c5:update
-        command: ./vendor/bin/concrete c5:update
+        command: /app/vendor/bin/concrete c5:update
         service: cli
 
 environments:
