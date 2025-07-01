@@ -67,10 +67,10 @@ class Feed extends \Concrete\Core\Entity\Page\Feed implements \Doctrine\ORM\Prox
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'itemsPerFeed', 'checkPagePermissions', 'customTopicAttributeKeyHandle', 'customTopicTreeNodeID', 'iconFID', 'pfDescription', 'pfHandle', 'pfTitle', 'pfID', 'cParentID', 'ptID', 'pfIncludeAllDescendents', 'pfDisplayAliases', 'pfDisplaySystemPages', 'pfContentToDisplay', 'pfAreaHandleToDisplay', 'pfDisplayFeaturedOnly'];
+            return ['__isInitialized__', 'itemsPerFeed', 'checkPagePermissions', 'customTopicAttributeKeyHandle', 'customTopicTreeNodeID', 'iconFID', '' . "\0" . 'Concrete\\Core\\Entity\\Page\\Feed' . "\0" . 'parentPage', 'pfDescription', 'pfHandle', 'pfTitle', 'pfID', 'cParentID', 'ptID', 'pfIncludeAllDescendents', 'pfDisplayAliases', 'pfDisplaySystemPages', 'pfContentToDisplay', 'pfAreaHandleToDisplay', 'pfDisplayFeaturedOnly'];
         }
 
-        return ['__isInitialized__', 'itemsPerFeed', 'checkPagePermissions', 'customTopicAttributeKeyHandle', 'customTopicTreeNodeID', 'iconFID', 'pfDescription', 'pfHandle', 'pfTitle', 'pfID', 'cParentID', 'ptID', 'pfIncludeAllDescendents', 'pfDisplayAliases', 'pfDisplaySystemPages', 'pfContentToDisplay', 'pfAreaHandleToDisplay', 'pfDisplayFeaturedOnly'];
+        return ['__isInitialized__', 'itemsPerFeed', 'checkPagePermissions', 'customTopicAttributeKeyHandle', 'customTopicTreeNodeID', 'iconFID', '' . "\0" . 'Concrete\\Core\\Entity\\Page\\Feed' . "\0" . 'parentPage', 'pfDescription', 'pfHandle', 'pfTitle', 'pfID', 'cParentID', 'ptID', 'pfIncludeAllDescendents', 'pfDisplayAliases', 'pfDisplaySystemPages', 'pfContentToDisplay', 'pfAreaHandleToDisplay', 'pfDisplayFeaturedOnly'];
     }
 
     /**
