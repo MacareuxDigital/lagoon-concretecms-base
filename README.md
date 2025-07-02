@@ -145,6 +145,31 @@ Then, you can generate the proxy classes using the following command:
 ./vendor/bin/concrete orm:generate-proxies
 ```
 
+## How to update Concrete CMS
+
+First, access the cli container using the following command:
+
+```bash
+docker compose exec cli bash
+```
+
+Then, update composer using the following command:
+
+```bash
+composer update
+```
+
+After updating composer, run `c5:update` command to update Concrete CMS:
+
+```bash
+./vendor/bin/concrete c5:update
+```
+
+After updating Concrete CMS, commit the updated `composer.lock` file and the generated proxy classes.
+Check the deployment status on Lagoon dashboard to see if the deployment was successful.
+
+After the deployment, access the Concrete CMS admin panel and check if Concrete CMS version is updated.
+
 ## How to sync between local and remote containers
 
 You can use `lagoon-sync` command to sync between local and remote containers.
