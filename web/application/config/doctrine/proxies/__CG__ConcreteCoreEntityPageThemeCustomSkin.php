@@ -448,7 +448,7 @@ class CustomSkin extends \Concrete\Core\Entity\Page\Theme\CustomSkin implements 
     /**
      * {@inheritDoc}
      */
-    public function getStylesheet(): \HtmlObject\Element
+    public function getStylesheet(): \Concrete\Core\StyleCustomizer\Skin\Stylesheet\StylesheetInterface
     {
 
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStylesheet', []);

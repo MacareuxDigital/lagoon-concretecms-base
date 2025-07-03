@@ -11,12 +11,23 @@ docker-compose-yaml: docker-compose.yml
 project: concretecms-base
 
 tasks:
+  pre-rollout:
+    - run:
+        name: Backup DB before updating Concrete CMS
+        command: |
+          mkdir -p /app/db-backup && \
+          mysqldump --no-tablespaces -h $MARIADB_HOST -u $MARIADB_USERNAME -p$MARIADB_PASSWORD $MARIADB_DATABASE > /app/db-backup/db-backup-$(date +%Y%m%d%H%M%S).sql
+        service: cli
   post-rollout:
     - run:
         name: update language files
         command: /app/vendor/bin/concrete c5:install-language --add ja_JP
         service: nginx
         container: php
+    - run:
+        name: Run Concrete CMS c5:update
+        command: /app/vendor/bin/concrete c5:update --env=live
+        service: cli
 
 environments:
   main:

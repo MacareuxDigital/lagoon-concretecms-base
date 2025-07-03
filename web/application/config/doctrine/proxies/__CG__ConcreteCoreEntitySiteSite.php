@@ -67,10 +67,10 @@ class Site extends \Concrete\Core\Entity\Site\Site implements \Doctrine\ORM\Prox
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'siteConfig', 'siteID', 'pThemeID', 'pThemeSkinIdentifier', 'siteIsDefault', 'siteHandle', 'locales', 'type'];
+            return ['__isInitialized__', 'siteConfig', 'siteID', 'pThemeID', 'pThemeSkinIdentifier', 'pThemeSkinIdentifierDark', 'siteIsDefault', 'siteHandle', 'locales', 'type'];
         }
 
-        return ['__isInitialized__', 'siteConfig', 'siteID', 'pThemeID', 'pThemeSkinIdentifier', 'siteIsDefault', 'siteHandle', 'locales', 'type'];
+        return ['__isInitialized__', 'siteConfig', 'siteID', 'pThemeID', 'pThemeSkinIdentifier', 'pThemeSkinIdentifierDark', 'siteIsDefault', 'siteHandle', 'locales', 'type'];
     }
 
     /**
@@ -564,6 +564,28 @@ class Site extends \Concrete\Core\Entity\Site\Site implements \Doctrine\ORM\Prox
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setThemeSkinIdentifier', [$pThemeSkinIdentifier]);
 
         parent::setThemeSkinIdentifier($pThemeSkinIdentifier);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getThemeSkinIdentifierDark()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getThemeSkinIdentifierDark', []);
+
+        return parent::getThemeSkinIdentifierDark();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setThemeSkinIdentifierDark($pThemeSkinIdentifierDark): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setThemeSkinIdentifierDark', [$pThemeSkinIdentifierDark]);
+
+        parent::setThemeSkinIdentifierDark($pThemeSkinIdentifierDark);
     }
 
     /**

@@ -13,7 +13,7 @@ RUN composer install --no-dev --prefer-dist
 COPY . /app
 RUN mkdir -p -v -m775 /app/web/application/cache
 RUN mkdir -p -v -m775 /app/web/application/files
-RUN mkdir -p -v -m775 /app/web/application/languages/site
+RUN mkdir -p -v -m775 /app/web/application/languages
 
 # Define where the Concrete CMS webroot is located
 ENV WEBROOT=web

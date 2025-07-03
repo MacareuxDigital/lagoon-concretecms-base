@@ -67,10 +67,10 @@ class Instance extends \Concrete\Core\Entity\Board\Instance implements \Doctrine
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'boardInstanceID', 'board', 'items', 'rules', 'batches', 'boardInstanceName', 'dateCreated', 'dateDataPoolLastUpdated', 'site', 'slots'];
+            return ['__isInitialized__', 'boardInstanceID', 'board', 'items', 'rules', 'batches', 'boardInstanceName', 'dateCreated', 'isGenerating', 'dateDataPoolLastUpdated', 'dateLastGenerated', 'site', 'slots', 'log'];
         }
 
-        return ['__isInitialized__', 'boardInstanceID', 'board', 'items', 'rules', 'batches', 'boardInstanceName', 'dateCreated', 'dateDataPoolLastUpdated', 'site', 'slots'];
+        return ['__isInitialized__', 'boardInstanceID', 'board', 'items', 'rules', 'batches', 'boardInstanceName', 'dateCreated', 'isGenerating', 'dateDataPoolLastUpdated', 'dateLastGenerated', 'site', 'slots', 'log'];
     }
 
     /**
@@ -349,6 +349,28 @@ class Instance extends \Concrete\Core\Entity\Board\Instance implements \Doctrine
     /**
      * {@inheritDoc}
      */
+    public function getLog(): ?\Concrete\Core\Entity\Board\InstanceLog
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLog', []);
+
+        return parent::getLog();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setLog(?\Concrete\Core\Entity\Board\InstanceLog $log = NULL): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLog', [$log]);
+
+        parent::setLog($log);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getDateCreatedObject(): \DateTime
     {
 
@@ -377,6 +399,61 @@ class Instance extends \Concrete\Core\Entity\Board\Instance implements \Doctrine
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDateDataPoolLastUpdated', [$dateDataPoolLastUpdated]);
 
         parent::setDateDataPoolLastUpdated($dateDataPoolLastUpdated);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function isGenerating(): bool
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'isGenerating', []);
+
+        return parent::isGenerating();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setIsGenerating(bool $isGenerating): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setIsGenerating', [$isGenerating]);
+
+        parent::setIsGenerating($isGenerating);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDateLastGenerated()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDateLastGenerated', []);
+
+        return parent::getDateLastGenerated();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setDateLastGenerated($dateLastGenerated): void
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setDateLastGenerated', [$dateLastGenerated]);
+
+        parent::setDateLastGenerated($dateLastGenerated);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getDateLastGeneratedObject(): \DateTime
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getDateLastGeneratedObject', []);
+
+        return parent::getDateLastGeneratedObject();
     }
 
     /**
