@@ -106,6 +106,18 @@ services:
     volumes:
       - db:/var/lib/mysql
 
+  redis:
+    image: uselagoon/redis-7
+    labels:
+      lagoon.type: redis
+      lando.type: redis
+    ports:
+      - "6379" # exposes the port 6379 with a random local port, find it with `docker-compose port redis 6379`
+    environment:
+      << : *default-environment
+    networks:
+      - amazeeio-network
+
 networks:
   amazeeio-network:
     external: true
