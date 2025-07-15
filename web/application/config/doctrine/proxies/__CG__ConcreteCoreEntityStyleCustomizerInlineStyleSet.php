@@ -180,6 +180,17 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
+    public function getID()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getID', []);
+
+        return parent::getID();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function setCustomClass($customClass)
     {
 
@@ -246,45 +257,56 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
-    public function setBorderWidth($borderWidth)
+    public function setBackgroundColor($backgroundColor)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBorderWidth', [$borderWidth]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBackgroundColor', [$backgroundColor]);
 
-        return parent::setBorderWidth($borderWidth);
+        return parent::setBackgroundColor($backgroundColor);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getBorderWidth()
+    public function getBackgroundColor()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBorderWidth', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBackgroundColor', []);
 
-        return parent::getBorderWidth();
+        return parent::getBackgroundColor();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setAlignment($alignment)
+    public function setBackgroundImageFileID($backgroundImageFileID)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAlignment', [$alignment]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBackgroundImageFileID', [$backgroundImageFileID]);
 
-        return parent::setAlignment($alignment);
+        return parent::setBackgroundImageFileID($backgroundImageFileID);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getAlignment()
+    public function getBackgroundImageFileID()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAlignment', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBackgroundImageFileID', []);
 
-        return parent::getAlignment();
+        return parent::getBackgroundImageFileID();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getBackgroundImageFileObject()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBackgroundImageFileObject', []);
+
+        return parent::getBackgroundImageFileObject();
     }
 
     /**
@@ -356,28 +378,6 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
-    public function setBaseFontSize($baseFontSize)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBaseFontSize', [$baseFontSize]);
-
-        return parent::setBaseFontSize($baseFontSize);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getBaseFontSize()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBaseFontSize', []);
-
-        return parent::getBaseFontSize();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setBorderColor($borderColor)
     {
 
@@ -422,6 +422,28 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
+    public function setBorderWidth($borderWidth)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBorderWidth', [$borderWidth]);
+
+        return parent::setBorderWidth($borderWidth);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getBorderWidth()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBorderWidth', []);
+
+        return parent::getBorderWidth();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function setBorderRadius($borderRadius)
     {
 
@@ -444,155 +466,45 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
-    public function setBoxShadowBlur($boxShadowBlur)
+    public function setBaseFontSize($baseFontSize)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowBlur', [$boxShadowBlur]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBaseFontSize', [$baseFontSize]);
 
-        return parent::setBoxShadowBlur($boxShadowBlur);
+        return parent::setBaseFontSize($baseFontSize);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getBoxShadowBlur()
+    public function getBaseFontSize()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowBlur', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBaseFontSize', []);
 
-        return parent::getBoxShadowBlur();
+        return parent::getBaseFontSize();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setBoxShadowColor($boxShadowColor)
+    public function setAlignment($alignment)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowColor', [$boxShadowColor]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setAlignment', [$alignment]);
 
-        return parent::setBoxShadowColor($boxShadowColor);
+        return parent::setAlignment($alignment);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getBoxShadowColor()
+    public function getAlignment()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowColor', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAlignment', []);
 
-        return parent::getBoxShadowColor();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setBoxShadowHorizontal($boxShadowHorizontal)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowHorizontal', [$boxShadowHorizontal]);
-
-        return parent::setBoxShadowHorizontal($boxShadowHorizontal);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getBoxShadowHorizontal()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowHorizontal', []);
-
-        return parent::getBoxShadowHorizontal();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setBoxShadowSpread($boxShadowSpread)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowSpread', [$boxShadowSpread]);
-
-        return parent::setBoxShadowSpread($boxShadowSpread);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getBoxShadowSpread()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowSpread', []);
-
-        return parent::getBoxShadowSpread();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setBoxShadowVertical($boxShadowVertical)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowVertical', [$boxShadowVertical]);
-
-        return parent::setBoxShadowVertical($boxShadowVertical);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getBoxShadowVertical()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowVertical', []);
-
-        return parent::getBoxShadowVertical();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getBoxShadowInset(): ?bool
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowInset', []);
-
-        return parent::getBoxShadowInset();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setBoxShadowInset(bool $boxShadowInset)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowInset', [$boxShadowInset]);
-
-        return parent::setBoxShadowInset($boxShadowInset);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setLinkColor($linkColor)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLinkColor', [$linkColor]);
-
-        return parent::setLinkColor($linkColor);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getLinkColor()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLinkColor', []);
-
-        return parent::getLinkColor();
+        return parent::getAlignment();
     }
 
     /**
@@ -620,34 +532,45 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
-    public function setRotate($rotate)
+    public function setLinkColor($linkColor)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRotate', [$rotate]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setLinkColor', [$linkColor]);
 
-        return parent::setRotate($rotate);
+        return parent::setLinkColor($linkColor);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getRotate()
+    public function getLinkColor()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRotate', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getLinkColor', []);
 
-        return parent::getRotate();
+        return parent::getLinkColor();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getID()
+    public function setMarginTop($marginTop)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getID', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMarginTop', [$marginTop]);
 
-        return parent::getID();
+        return parent::setMarginTop($marginTop);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getMarginTop()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMarginTop', []);
+
+        return parent::getMarginTop();
     }
 
     /**
@@ -719,23 +642,23 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
-    public function setMarginTop($marginTop)
+    public function setPaddingTop($paddingTop)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setMarginTop', [$marginTop]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPaddingTop', [$paddingTop]);
 
-        return parent::setMarginTop($marginTop);
+        return parent::setPaddingTop($paddingTop);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getMarginTop()
+    public function getPaddingTop()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getMarginTop', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPaddingTop', []);
 
-        return parent::getMarginTop();
+        return parent::getPaddingTop();
     }
 
     /**
@@ -807,89 +730,155 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
-    public function setPaddingTop($paddingTop)
+    public function setRotate($rotate)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPaddingTop', [$paddingTop]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setRotate', [$rotate]);
 
-        return parent::setPaddingTop($paddingTop);
+        return parent::setRotate($rotate);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getPaddingTop()
+    public function getRotate()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPaddingTop', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getRotate', []);
 
-        return parent::getPaddingTop();
+        return parent::getRotate();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setBackgroundColor($backgroundColor)
+    public function setBoxShadowHorizontal($boxShadowHorizontal)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBackgroundColor', [$backgroundColor]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowHorizontal', [$boxShadowHorizontal]);
 
-        return parent::setBackgroundColor($backgroundColor);
+        return parent::setBoxShadowHorizontal($boxShadowHorizontal);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setBackgroundImageFileID($backgroundImageFileID)
+    public function getBoxShadowHorizontal()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBackgroundImageFileID', [$backgroundImageFileID]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowHorizontal', []);
 
-        return parent::setBackgroundImageFileID($backgroundImageFileID);
+        return parent::getBoxShadowHorizontal();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getBackgroundColor()
+    public function setBoxShadowVertical($boxShadowVertical)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBackgroundColor', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowVertical', [$boxShadowVertical]);
 
-        return parent::getBackgroundColor();
+        return parent::setBoxShadowVertical($boxShadowVertical);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getBackgroundImageFileID()
+    public function getBoxShadowVertical()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBackgroundImageFileID', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowVertical', []);
 
-        return parent::getBackgroundImageFileID();
+        return parent::getBoxShadowVertical();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getBackgroundImageFileObject()
+    public function setBoxShadowBlur($boxShadowBlur)
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBackgroundImageFileObject', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowBlur', [$boxShadowBlur]);
 
-        return parent::getBackgroundImageFileObject();
+        return parent::setBoxShadowBlur($boxShadowBlur);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function getHideOnExtraSmallDevice()
+    public function getBoxShadowBlur()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getHideOnExtraSmallDevice', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowBlur', []);
 
-        return parent::getHideOnExtraSmallDevice();
+        return parent::getBoxShadowBlur();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setBoxShadowSpread($boxShadowSpread)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowSpread', [$boxShadowSpread]);
+
+        return parent::setBoxShadowSpread($boxShadowSpread);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getBoxShadowSpread()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowSpread', []);
+
+        return parent::getBoxShadowSpread();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setBoxShadowColor($boxShadowColor)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowColor', [$boxShadowColor]);
+
+        return parent::setBoxShadowColor($boxShadowColor);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getBoxShadowColor()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowColor', []);
+
+        return parent::getBoxShadowColor();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setBoxShadowInset(bool $boxShadowInset)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setBoxShadowInset', [$boxShadowInset]);
+
+        return parent::setBoxShadowInset($boxShadowInset);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getBoxShadowInset(): ?bool
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getBoxShadowInset', []);
+
+        return parent::getBoxShadowInset();
     }
 
     /**
@@ -906,12 +895,12 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
-    public function getHideOnSmallDevice()
+    public function getHideOnExtraSmallDevice()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getHideOnSmallDevice', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getHideOnExtraSmallDevice', []);
 
-        return parent::getHideOnSmallDevice();
+        return parent::getHideOnExtraSmallDevice();
     }
 
     /**
@@ -928,12 +917,12 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
-    public function getHideOnMediumDevice()
+    public function getHideOnSmallDevice()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getHideOnMediumDevice', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getHideOnSmallDevice', []);
 
-        return parent::getHideOnMediumDevice();
+        return parent::getHideOnSmallDevice();
     }
 
     /**
@@ -950,12 +939,12 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
     /**
      * {@inheritDoc}
      */
-    public function getHideOnLargeDevice()
+    public function getHideOnMediumDevice()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getHideOnLargeDevice', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getHideOnMediumDevice', []);
 
-        return parent::getHideOnLargeDevice();
+        return parent::getHideOnMediumDevice();
     }
 
     /**
@@ -967,6 +956,17 @@ class StyleSet extends \Concrete\Core\Entity\StyleCustomizer\Inline\StyleSet imp
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setHideOnLargeDevice', [$hideOnLargeDevice]);
 
         return parent::setHideOnLargeDevice($hideOnLargeDevice);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getHideOnLargeDevice()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getHideOnLargeDevice', []);
+
+        return parent::getHideOnLargeDevice();
     }
 
     /**
