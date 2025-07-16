@@ -147,19 +147,19 @@ Then, you can generate the proxy classes using the following command:
 
 ## How to update Concrete CMS
 
-First, access the cli container using the following command:
-
-```bash
-docker compose exec cli bash
-```
-
-Then, update composer using the following command:
+First, update composer in local using the following command:
 
 ```bash
 composer update
 ```
 
-After updating composer, run `c5:update` command to update Concrete CMS:
+Then, access the cli container using the following command:
+
+```bash
+docker compose exec cli bash
+```
+
+Run `c5:update` command to update Concrete CMS inside container:
 
 ```bash
 ./vendor/bin/concrete c5:update
