@@ -7,32 +7,98 @@ return [
      * ------------------------------------------------------------------------
      */
     'cache' => [
-        'directory' => '/app/web/application/cache',
-        'directory_relative' => '/application/cache',
-        'page' => [
-            'directory' => '/app/web/application/cache/pages',
-        ],
         'levels' => [
             'overrides' => [
+                'preferred_driver' => 'redis',
                 'drivers' => [
-                    'core_filesystem' => [
+                    'redis' => [
                         'options' => [
-                            'path' => '/app/web/application/cache/overrides',
+                            'database' => 0,
+                            'prefix' => 'myapp:overrides',
+                            'servers' => [
+                                [
+                                    'host' => 'redis',
+                                    'port' => 6379,
+                                    'ttl' => 5,
+                                    'password' => null,
+                                ],
+                            ],
                         ],
                     ],
                 ],
             ],
             'expensive' => [
+                'preferred_driver' => 'redis',
                 'drivers' => [
-                    'core_filesystem' => [
+                    'redis' => [
                         'options' => [
-                            'path' => '/app/web/application/cache/expensive',
+                            'database' => 0,
+                            'prefix' => 'myapp:expensive',
+                            'servers' => [
+                                [
+                                    'host' => 'redis',
+                                    'port' => 6379,
+                                    'ttl' => 5,
+                                    'password' => null,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'object' => [
+                'preferred_driver' => 'redis',
+                'drivers' => [
+                    'redis' => [
+                        'options' => [
+                            'database' => 0,
+                            'prefix' => 'myapp:object',
+                            'servers' => [
+                                [
+                                    'host' => 'redis',
+                                    'port' => 6379,
+                                    'ttl' => 5,
+                                    'password' => null,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
+            'page' => [
+                'adapter' => 'redis',
+                'redis' => [
+                    'prefix' => 'myapp:page-cache',
+                    'database' => 0,
+                    'servers' => [
+                        [
+                            'host' => 'redis',
+                            'port' => 6379,
+                            'ttl' => 5,
+                            'password' => null,
                         ],
                     ],
                 ],
             ],
         ],
     ],
+
+    'session' => [
+        'handler' => 'redis',
+        'redis' => [
+            'database' => 0,
+            'prefix' => 'myapp:session',
+            'servers' => [
+                [
+                    'host' => 'redis',
+                    'port' => 6379,
+                    'ttl' => 5,
+                    'password' => null,
+                ],
+            ],
+        ],
+    ],
+
     /*
      * ------------------------------------------------------------------------
      * Sitemap.xml settings
