@@ -17,7 +17,7 @@ return [
                             'prefix' => 'myapp:overrides',
                             'servers' => [
                                 [
-                                    'host' => '127.0.0.1',
+                                    'host' => 'redis',
                                     'port' => 6379,
                                     'ttl' => 5,
                                     'password' => null,
@@ -36,7 +36,7 @@ return [
                             'prefix' => 'myapp:expensive',
                             'servers' => [
                                 [
-                                    'host' => '127.0.0.1',
+                                    'host' => 'redis',
                                     'port' => 6379,
                                     'ttl' => 5,
                                     'password' => null,
@@ -55,7 +55,7 @@ return [
                             'prefix' => 'myapp:object',
                             'servers' => [
                                 [
-                                    'host' => '127.0.0.1',
+                                    'host' => 'redis',
                                     'port' => 6379,
                                     'ttl' => 5,
                                     'password' => null,
@@ -72,7 +72,7 @@ return [
                     'database' => 0,
                     'servers' => [
                         [
-                            'host' => '127.0.0.1',
+                            'host' => 'redis',
                             'port' => 6379,
                             'ttl' => 5,
                             'password' => null,
@@ -90,7 +90,7 @@ return [
             'prefix' => 'myapp:session',
             'servers' => [
                 [
-                    'host' => '127.0.0.1',
+                    'host' => 'redis',
                     'port' => 6379,
                     'ttl' => 5,
                     'password' => null,
