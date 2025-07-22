@@ -14,11 +14,11 @@ return [
                     'redis' => [
                         'options' => [
                             'database' => 0,
-                            'prefix' => 'myapp:overrides',
+                            'prefix' => getenv('REDIS_CACHE_PREFIX') ?: 'myapp:overrides',
                             'servers' => [
                                 [
-                                    'host' => 'redis',
-                                    'port' => 6379,
+                                    'host' => getenv('REDIS_HOST') ?: 'redis',
+                                    'port' => getenv('REDIS_SERVICE_PORT') ?: 6379,
                                     'ttl' => 5,
                                     'password' => null,
                                 ],
@@ -33,11 +33,11 @@ return [
                     'redis' => [
                         'options' => [
                             'database' => 0,
-                            'prefix' => 'myapp:expensive',
+                            'prefix' => getenv('REDIS_CACHE_PREFIX') ?: 'myapp:expensive',
                             'servers' => [
                                 [
-                                    'host' => 'redis',
-                                    'port' => 6379,
+                                    'host' => getenv('REDIS_HOST') ?: 'redis',
+                                    'port' => getenv('REDIS_SERVICE_PORT') ?: 6379,
                                     'ttl' => 5,
                                     'password' => null,
                                 ],
@@ -52,11 +52,11 @@ return [
                     'redis' => [
                         'options' => [
                             'database' => 0,
-                            'prefix' => 'myapp:object',
+                            'prefix' => getenv('REDIS_CACHE_PREFIX') ?: 'myapp:object',
                             'servers' => [
                                 [
-                                    'host' => 'redis',
-                                    'port' => 6379,
+                                    'host' => getenv('REDIS_HOST') ?: 'redis',
+                                    'port' => getenv('REDIS_SERVICE_PORT') ?: 6379,
                                     'ttl' => 5,
                                     'password' => null,
                                 ],
@@ -68,12 +68,12 @@ return [
             'page' => [
                 'adapter' => 'redis',
                 'redis' => [
-                    'prefix' => 'myapp:page-cache',
+                    'prefix' => getenv('REDIS_CACHE_PREFIX') ?: 'myapp:page-cache',
                     'database' => 0,
                     'servers' => [
                         [
-                            'host' => 'redis',
-                            'port' => 6379,
+                            'host' => getenv('REDIS_HOST') ?: 'redis',
+                            'port' => getenv('REDIS_SERVICE_PORT') ?: 6379,
                             'ttl' => 5,
                             'password' => null,
                         ],
@@ -87,11 +87,11 @@ return [
         'handler' => 'redis',
         'redis' => [
             'database' => 0,
-            'prefix' => 'myapp:session',
+            'prefix' => getenv('REDIS_SESSION_PREFIX') ?: 'myapp:session',
             'servers' => [
                 [
-                    'host' => 'redis',
-                    'port' => 6379,
+                    'host' => getenv('REDIS_HOST') ?: 'redis',
+                    'port' => getenv('REDIS_SERVICE_PORT') ?: 6379,
                     'ttl' => 5,
                     'password' => null,
                 ],
