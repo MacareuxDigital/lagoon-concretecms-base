@@ -1,6 +1,9 @@
 FROM uselagoon/lagoon-cli:latest as LAGOONCLI
 FROM uselagoon/php-8.3-cli:latest
 
+# Install redis-cli
+RUN apk add --no-cache redis
+
 COPY --from=LAGOONCLI /lagoon /usr/local/bin/lagoon
 RUN DOWNLOAD_PATH=$(curl -sL "https://api.github.com/repos/uselagoon/lagoon-sync/releases/latest" | grep "browser_download_url" | cut -d \" -f 4 | grep linux_amd64) \
     && wget -O /usr/local/bin/lagoon-sync $DOWNLOAD_PATH && chmod a+x /usr/local/bin/lagoon-sync
