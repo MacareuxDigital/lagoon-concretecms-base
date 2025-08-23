@@ -25,6 +25,11 @@ tasks:
         service: nginx
         container: php
     - run:
+        name: Create languages/site directory
+        command: mkdir -p -v -m775 /app/web/application/languages/site
+        service: nginx
+        container: php
+    - run:
         name: Run Concrete CMS c5:update
         command: /app/vendor/bin/concrete c5:update --env=live
         service: cli
