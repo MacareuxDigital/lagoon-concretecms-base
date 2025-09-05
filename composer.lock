@@ -406,16 +406,16 @@
         },
         {
             "name": "concrete5/core",
-            "version": "9.4.1",
+            "version": "9.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/concretecms/concretecms-core.git",
-                "reference": "3a42600a77a1e1c524fce0277a504b9485325f16"
+                "reference": "9324f21c3b623adbefc59a83659bf05e62b8032a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/concretecms/concretecms-core/zipball/3a42600a77a1e1c524fce0277a504b9485325f16",
-                "reference": "3a42600a77a1e1c524fce0277a504b9485325f16",
+                "url": "https://api.github.com/repos/concretecms/concretecms-core/zipball/9324f21c3b623adbefc59a83659bf05e62b8032a",
+                "reference": "9324f21c3b623adbefc59a83659bf05e62b8032a",
                 "shasum": ""
             },
             "require": {
@@ -540,7 +540,11 @@
             "autoload": {
                 "psr-4": {
                     "Concrete\\Core\\": "src"
-                }
+                },
+                "exclude-from-classmap": [
+                    "src/Support/.phpstorm.meta.php",
+                    "src/Support/__IDE_SYMBOLS__.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -559,7 +563,7 @@
                 "forum": "https://forums.concretecms.org/",
                 "source": "https://documentation.concretecms.org/api/"
             },
-            "time": "2025-05-12T18:56:20+00:00"
+            "time": "2025-07-01T16:43:58+00:00"
         },
         {
             "name": "concrete5/oauth-user-data",
