@@ -130,6 +130,22 @@ return [
     'updates' => [
         // Skip the automatic check of new Concrete versions availability
         'skip_core' => true,
+        // List of package handles that shouldn't be checked for new versions in marketplace (useful for example if the core is upgraded via composer)
+        // Set to true to skip all the packages
+        'skip_packages' => true,
+    ],
+    /*
+     * ------------------------------------------------------------------------
+     * Marketplace settings
+     * ------------------------------------------------------------------------
+     */
+    'marketplace' => [
+        /*
+         * Enable marketplace integration
+         *
+         * @var bool concrete.marketplace.enabled
+         */
+        'enabled' => false,
     ],
     /*
      * ------------------------------------------------------------------------
