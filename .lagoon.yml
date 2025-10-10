@@ -18,6 +18,10 @@ tasks:
           mkdir -p /app/db-backup && \
           mysqldump --no-tablespaces -h $MARIADB_HOST -u $MARIADB_USERNAME -p$MARIADB_PASSWORD $MARIADB_DATABASE > /app/db-backup/db-backup-$(date +%Y%m%d%H%M%S).sql
         service: cli
+    - run:
+        name: Run Concrete CMS c5:update
+        command: /app/vendor/bin/concrete c5:update --env=live
+        service: cli
   post-rollout:
     - run:
         name: update language files
@@ -29,10 +33,6 @@ tasks:
         command: mkdir -p -v -m775 /app/web/application/languages/site
         service: nginx
         container: php
-    - run:
-        name: Run Concrete CMS c5:update
-        command: /app/vendor/bin/concrete c5:update --env=live
-        service: cli
 
 environments:
   main:
