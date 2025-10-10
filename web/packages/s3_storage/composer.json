@@ -1,0 +1,26 @@
+{
+    "name": "mnkras/concrete5-s3_storage",
+    "description": "Allow a concrete5 site to use Amazon S3 as a storage location.",
+    "require": {
+        "league/flysystem-aws-s3-v3": "^1.0"
+    },
+    "replace": {
+        "league/flysystem": "1.0.*",
+        "guzzlehttp/psr7": "*",
+        "guzzlehttp/promises": "*",
+        "guzzlehttp/guzzle": "*",
+        "psr/http-message": "*"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Michael Krasnow",
+            "email": "mnkras@gmail.com"
+        },
+        {
+            "name": "Macareux Digital",
+            "email": "info@macareux.co.jp"
+        }
+    ],
+    "type": "concrete5-package"
+}
