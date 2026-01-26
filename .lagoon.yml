@@ -50,7 +50,6 @@ environments:
       - name: nginx
         annotations:
           nginx.ingress.kubernetes.io/proxy-body-size: "32m"
-
 lagoon-sync:
   mariadb:
     type: mariadb
