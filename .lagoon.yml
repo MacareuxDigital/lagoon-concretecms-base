@@ -48,8 +48,9 @@ environments:
   dev:
     routes:
       - nginx:
-          annotations:
-            nginx.ingress.kubernetes.io/proxy-body-size: "32m"
+          - nginx.dev.demo-macareux-digital-concrete5.jp1.amazee.io:
+              annotations:
+                nginx.ingress.kubernetes.io/proxy-body-size: "32m"
 
 lagoon-sync:
   mariadb:
