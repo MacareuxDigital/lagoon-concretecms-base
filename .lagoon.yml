@@ -45,6 +45,11 @@ environments:
         schedule: "* * * * *" # Every minute.
         command: /app/vendor/bin/concrete concrete:scheduler:run
         service: cli
+  dev:
+    routes:
+      - name: nginx
+        annotations:
+          nginx.ingress.kubernetes.io/proxy-body-size: "32m"
 
 lagoon-sync:
   mariadb:
