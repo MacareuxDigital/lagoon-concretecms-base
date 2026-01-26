@@ -45,12 +45,6 @@ environments:
         schedule: "* * * * *" # Every minute.
         command: /app/vendor/bin/concrete concrete:scheduler:run
         service: cli
-  dev:
-    routes:
-      - nginx:
-          - nginx.dev.demo-macareux-digital-concrete5.jp1.amazee.io:
-              annotations:
-                nginx.ingress.kubernetes.io/proxy-body-size: "32m"
 
 lagoon-sync:
   mariadb:
