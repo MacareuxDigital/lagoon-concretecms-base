@@ -95,7 +95,7 @@ services:
       << : *default-environment # loads the defined environment variables from the top
 
   mariadb:
-    image: uselagoon/mariadb-10.11:latest
+    image: uselagoon/mysql-8.0:latest
     labels:
       lagoon.type: mariadb
       lando.type: mariadb
