@@ -11,7 +11,7 @@ This template includes everything you need to get started with Concrete CMS to r
 
 This template includes the following services:
 
-* Concrete CMS 9.3
+* Concrete CMS 9.4
 * PHP 8.3 (FPM)
 * Nginx
 * MySQL 8.0
