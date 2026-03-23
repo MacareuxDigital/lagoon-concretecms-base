@@ -14,7 +14,11 @@ This template includes the following services:
 * Concrete CMS 9.3
 * PHP 8.3 (FPM)
 * Nginx
-* MariaDB 10.11
+* MySQL 8.0
+
+According to Lagoon's specifications, when using lagoon.type: mariadb, 
+the system automatically selects a managed MySQL service. 
+The jp1.amazee.io cluster provides AWS Aurora MySQL 8.0.
 
 ## Initial Setup
 
@@ -51,6 +55,13 @@ After starting the pygmy, you need to start the docker containers using the foll
 docker compose up -d
 ```
 
+If you previously built the volume with mariadb, you need to down the volume before starting the containers.
+
+```bash
+docker compose down -v
+docker compose up -d
+```
+
 If you want to check the status of the local environment, you can use the following command:
 
 ```bash
@@ -79,8 +90,8 @@ docker compose up -d --force-recreate
 To rebuild images, you can use the following command:
 
 ```bash
-docker-compose down
-docker-compose up -d --build
+docker compose down
+docker compose up -d --build
 ```
 
 ### Install Concrete
@@ -147,16 +158,16 @@ Then, you can generate the proxy classes using the following command:
 
 ## How to update Concrete CMS
 
-First, update composer in local using the following command:
-
-```bash
-composer update
-```
-
-Then, access the cli container using the following command:
+First, access the cli container using the following command:
 
 ```bash
 docker compose exec cli bash
+```
+
+Then, update composer in local cli container using the following command:
+
+```bash
+composer update
 ```
 
 Run `c5:update` command to update Concrete CMS inside container:
