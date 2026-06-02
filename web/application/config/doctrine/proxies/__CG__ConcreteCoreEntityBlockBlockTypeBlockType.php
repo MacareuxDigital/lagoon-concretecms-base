@@ -576,12 +576,12 @@ class BlockType extends \Concrete\Core\Entity\Block\BlockType\BlockType implemen
     /**
      * {@inheritDoc}
      */
-    public function add($data, $c = false, $a = false)
+    public function add($data, $c = false, $a = false, ?string $saveMode = 'request')
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'add', [$data, $c, $a]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'add', [$data, $c, $a, $saveMode]);
 
-        return parent::add($data, $c, $a);
+        return parent::add($data, $c, $a, $saveMode);
     }
 
     /**
