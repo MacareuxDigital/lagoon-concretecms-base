@@ -38,8 +38,18 @@ environments:
   main:
     cronjobs:
       - name: messenger consume
-        schedule: "M * * * *" # Once per hour, at a random minute.
-        command: /app/vendor/bin/concrete messenger:consume async --time-limit=3600
+        schedule: "*/15 * * * *" # Once per hour, at a random minute.
+        command: /app/vendor/bin/concrete messenger:consume async --time-limit=600
+        service: cli
+      - name: scheduling worker
+        schedule: "* * * * *" # Every minute.
+        command: /app/vendor/bin/concrete concrete:scheduler:run
+        service: cli
+  dev:
+    cronjobs:
+      - name: messenger consume
+        schedule: "*/15 * * * *" # Every 15 minutes
+        command: /app/vendor/bin/concrete messenger:consume async --time-limit=600
         service: cli
       - name: scheduling worker
         schedule: "* * * * *" # Every minute.
