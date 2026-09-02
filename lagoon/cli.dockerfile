@@ -10,10 +10,14 @@ RUN DOWNLOAD_PATH=$(curl -sL "https://api.github.com/repos/uselagoon/lagoon-sync
 
 # Install composer dependencies
 COPY composer.* /app/
-RUN composer install --no-dev --prefer-dist
+RUN composer install --no-dev --prefer-dist --no-interaction --optimize-autoloader --classmap-authoritative
 
 # Copy the application code to the image and make sure the required directories are created
 COPY . /app
+
+# Rebuild classmaps after the full tree is in the image so production does not fall back to Composer filesystem lookups.
+RUN composer dump-autoload --no-dev --optimize --classmap-authoritative
+
 RUN mkdir -p -v -m775 /app/web/application/cache
 RUN mkdir -p -v -m775 /app/web/application/files
 
