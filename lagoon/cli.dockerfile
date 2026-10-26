@@ -1,6 +1,9 @@
 FROM uselagoon/lagoon-cli:latest as LAGOONCLI
 FROM uselagoon/php-8.3-cli:latest
 
+#MAINT-2715 PHP (CVE-2026-109619 / CVE-2026-115560)
+COPY lagoon/php-security.ini /usr/local/etc/php/conf.d/zz-security.ini
+
 # Install redis-cli
 RUN apk add --no-cache redis
 
