@@ -257,6 +257,17 @@ class User extends \Concrete\Core\Entity\User\User implements \Doctrine\ORM\Prox
     /**
      * {@inheritDoc}
      */
+    public function getUserValidationStatus()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUserValidationStatus', []);
+
+        return parent::getUserValidationStatus();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getUserDateAdded()
     {
 
