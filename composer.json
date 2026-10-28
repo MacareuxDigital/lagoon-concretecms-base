@@ -1,3 +1,4 @@
+
 {
     "name": "macareuxdigital/lagoon-concretecms-base",
     "description": "Project template for Concrete CMS projects hosted on Lagoon",
@@ -6,8 +7,8 @@
     "prefer-stable": true,
     "require": {
         "composer/installers": "^2.3",
-        "concrete5/core": "^9.3",
-        "concretecms/dependency-patches": "^1.7"
+        "concrete5/core": "^9.5.7",
+        "concretecms/dependency-patches": "^1.9.0"
     },
     "config": {
         "platform": {
@@ -16,6 +17,11 @@
         "allow-plugins": {
             "composer/installers": true,
             "mlocati/composer-patcher": true
+        },
+        "audit": {
+            "ignore": {
+                "PKSA-w9tt-7782-78jx": "league/flysystem is affected by CVE-2026-102601, fixed by concretecms/dependency-patches"
+            }
         }
     },
     "extra": {
